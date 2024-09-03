@@ -32,7 +32,6 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:Sphere": {
-"generate/physics": true,
 "mesh_instance/layers": 2
 }
 }

@@ -1,7 +1,48 @@
-[gd_scene load_steps=2 format=3 uid="uid://6okluevilh4r"]
+[gd_scene load_steps=11 format=3 uid="uid://6okluevilh4r"]
 
 [ext_resource type="PackedScene" uid="uid://crjftoioje6r1" path="res://assets/model/CONRONG.glb" id="1_jgirf"]
+[ext_resource type="Script" path="res://scripts/conrong/conrong.gd" id="1_onl7m"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/beehave_tree.gd" id="2_cumif"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/composites/selector_reactive.gd" id="3_s3vmr"]
+[ext_resource type="Script" path="res://addons/beehave/nodes/composites/sequence_star.gd" id="4_37rj3"]
+[ext_resource type="Script" path="res://scripts/conrong/tree/IsPlayerInRange.gd" id="5_b4kg2"]
+[ext_resource type="Script" path="res://scripts/conrong/tree/TracePlayer.gd" id="6_v4l2v"]
+[ext_resource type="Script" path="res://scripts/conrong/tree/PickAPlace.gd" id="7_rc3tn"]
+[ext_resource type="Script" path="res://scripts/conrong/tree/RunToIt.gd" id="8_2s62h"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7vah1"]
+radius = 0.99938
 
 [node name="conrong" type="CharacterBody3D"]
+script = ExtResource("1_onl7m")
 
 [node name="CONRONG" parent="." instance=ExtResource("1_jgirf")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_7vah1")
+
+[node name="BeehaveTree" type="Node" parent="." node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("2_cumif")
+blackboard = NodePath("@Node@26601")
+actor = NodePath("..")
+
+[node name="SelectorReactiveComposite" type="Node" parent="BeehaveTree"]
+script = ExtResource("3_s3vmr")
+
+[node name="TracePlayer" type="Node" parent="BeehaveTree/SelectorReactiveComposite"]
+script = ExtResource("4_37rj3")
+
+[node name="IsPlayerInRange" type="Node" parent="BeehaveTree/SelectorReactiveComposite/TracePlayer"]
+script = ExtResource("5_b4kg2")
+
+[node name="TracePlayer" type="Node" parent="BeehaveTree/SelectorReactiveComposite/TracePlayer"]
+script = ExtResource("6_v4l2v")
+
+[node name="RunAround" type="Node" parent="BeehaveTree/SelectorReactiveComposite"]
+script = ExtResource("4_37rj3")
+
+[node name="PickAPlace" type="Node" parent="BeehaveTree/SelectorReactiveComposite/RunAround"]
+script = ExtResource("7_rc3tn")
+
+[node name="RunToIt" type="Node" parent="BeehaveTree/SelectorReactiveComposite/RunAround"]
+script = ExtResource("8_2s62h")
