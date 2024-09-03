@@ -118,4 +118,4 @@ material = SubResource("StandardMaterial3D_4s677")
 transform = Transform3D(0.127546, 0, 0, 0, 0.127546, 0, 0, 0, 0.127546, 8, 2, 0)
 
 [node name="conrong" parent="." instance=ExtResource("2_curov")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82735, 2.35656, -7.23877)
