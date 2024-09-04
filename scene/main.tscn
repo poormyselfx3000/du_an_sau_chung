@@ -1,0 +1,136 @@
+[gd_scene load_steps=16 format=3 uid="uid://co3il2lsa8ef"]
+
+[ext_resource type="Texture2D" uid="uid://mi4ctdmf8cfa" path="res://assets/textures/san/garage_floor_diff_2k.jpg" id="1_gokyt"]
+[ext_resource type="Texture2D" uid="uid://dcl1iyryhmsbo" path="res://assets/textures/floor/metal_plate_02_diff_2k.jpg" id="1_w7x7j"]
+[ext_resource type="Texture2D" uid="uid://ctxoph3psgotl" path="res://assets/textures/san/garage_floor_arm_2k.jpg" id="2_3n3ft"]
+[ext_resource type="Texture2D" uid="uid://budbomd3oyg3t" path="res://assets/textures/floor/metal_plate_02_arm_2k.jpg" id="2_dwp0n"]
+[ext_resource type="Texture2D" uid="uid://bwh4qe32kn6pp" path="res://assets/textures/san/garage_floor_nor_gl_2k.jpg" id="3_boccn"]
+[ext_resource type="PackedScene" uid="uid://com4ikijbgnln" path="res://character.tscn" id="3_xqp6p"]
+[ext_resource type="Texture2D" uid="uid://d3pnt2rt5q8ym" path="res://assets/textures/tuong/medieval_red_brick_diff_2k.jpg" id="4_ypcrx"]
+[ext_resource type="Texture2D" uid="uid://dpg6vbejvgjye" path="res://assets/textures/tuong/medieval_red_brick_arm_2k.jpg" id="5_3hqk4"]
+[ext_resource type="Texture2D" uid="uid://b306lalxdcpsd" path="res://assets/textures/tuong/medieval_red_brick_nor_gl_2k.jpg" id="6_dvdgu"]
+[ext_resource type="Texture2D" uid="uid://nndwxovhwh18" path="res://assets/textures/floor/metal_plate_02_nor_gl_2k.jpg" id="9_j8wg6"]
+[ext_resource type="PackedScene" uid="uid://cvyqdyj20vtqh" path="res://assets/model/caiban/outdoor_table_chair_set_01_2k.gltf" id="11_uyyxd"]
+
+[sub_resource type="Environment" id="Environment_7revu"]
+background_mode = 2
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 1.76
+glow_strength = 1.08
+glow_bloom = 0.02
+glow_blend_mode = 1
+fog_enabled = true
+fog_light_color = Color(0.0523985, 0.0612621, 0.0751972, 1)
+fog_light_energy = 2.35
+fog_density = 0.3995
+fog_aerial_perspective = 0.442
+fog_height = 172.46
+fog_height_density = 0.0001
+volumetric_fog_density = 1.0
+volumetric_fog_albedo = Color(0.194349, 0.194349, 0.194349, 1)
+volumetric_fog_length = 129.36
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8yd11"]
+albedo_texture = ExtResource("1_gokyt")
+metallic = 1.0
+metallic_texture = ExtResource("2_3n3ft")
+roughness_texture = ExtResource("1_gokyt")
+normal_enabled = true
+normal_scale = 2.95
+normal_texture = ExtResource("3_boccn")
+ao_enabled = true
+ao_texture = ExtResource("2_3n3ft")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ta6s"]
+albedo_texture = ExtResource("4_ypcrx")
+metallic = 1.0
+metallic_texture = ExtResource("5_3hqk4")
+roughness_texture = ExtResource("5_3hqk4")
+normal_enabled = true
+normal_scale = 4.71
+normal_texture = ExtResource("6_dvdgu")
+ao_enabled = true
+ao_light_affect = 0.25
+ao_texture = ExtResource("5_3hqk4")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ncaue"]
+albedo_texture = ExtResource("1_w7x7j")
+metallic = 1.0
+metallic_texture = ExtResource("2_dwp0n")
+roughness_texture = ExtResource("2_dwp0n")
+normal_enabled = true
+normal_scale = 10.1
+normal_texture = ExtResource("9_j8wg6")
+ao_enabled = true
+ao_light_affect = 0.12
+ao_texture = ExtResource("2_dwp0n")
+uv1_triplanar = true
+
+[node name="main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7revu")
+
+[node name="block" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.243652, 0)
+layers = 2
+use_collision = true
+size = Vector3(50, 0.513, 50)
+material = SubResource("StandardMaterial3D_8yd11")
+
+[node name="block7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.40649, 0)
+layers = 2
+use_collision = true
+size = Vector3(50, 0.513, 50)
+material = SubResource("StandardMaterial3D_4ta6s")
+
+[node name="block3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.6956, 2.5322, 0)
+layers = 2
+use_collision = true
+size = Vector3(0.608887, 6.06471, 50)
+material = SubResource("StandardMaterial3D_4ta6s")
+
+[node name="block4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7316, 2.5322, 0)
+layers = 2
+use_collision = true
+size = Vector3(0.608887, 6.06471, 50)
+material = SubResource("StandardMaterial3D_4ta6s")
+
+[node name="block5" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.105532, 2.5322, 24.8413)
+layers = 2
+use_collision = true
+size = Vector3(0.608887, 6.06471, 50)
+material = SubResource("StandardMaterial3D_4ta6s")
+
+[node name="block6" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.105532, 2.5322, -25.1587)
+layers = 2
+use_collision = true
+size = Vector3(0.608887, 6.06471, 50)
+material = SubResource("StandardMaterial3D_4ta6s")
+
+[node name="block2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00537, 1.51215, 0.384399)
+layers = 2
+use_collision = true
+size = Vector3(9.01074, 3, 0.231201)
+material = SubResource("StandardMaterial3D_ncaue")
+
+[node name="OmniLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.397885, 0.917435, 0, -0.917435, 0.397885, 0, 2.93356, 0)
+layers = 2
+shadow_enabled = true
+spot_range = 6.07411
+
+[node name="character" parent="." instance=ExtResource("3_xqp6p")]
+transform = Transform3D(0.227431, 0, 0, 0, 0.227431, 0, 0, 0, 0.227431, 0, 2, -16)
+
+[node name="outdoor_table_chair_set_01_2k" parent="." instance=ExtResource("11_uyyxd")]
+transform = Transform3D(-0.103608, 0, 0.994618, 0, 1, 0, -0.994618, 0, -0.103608, -0.657364, 0.012848, -0.46446)

@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://com4ikijbgnln"]
+
+[ext_resource type="Script" path="res://character.gd" id="1_jjoig"]
+[ext_resource type="PackedScene" uid="uid://c5gyp71plqi11" path="res://assets/model/saurieng.glb" id="1_sh03c"]
+[ext_resource type="Script" path="res://Node3D.gd" id="3_hsn4h"]
+[ext_resource type="PackedScene" uid="uid://hboqhpmpcj8r" path="res://assets/model/caibuatom.glb" id="4_r8gsf"]
+[ext_resource type="PackedScene" uid="uid://bf8ym0a2e18ku" path="res://assets/model/denpin.glb" id="5_4utui"]
+[ext_resource type="Script" path="res://assets/model/denpin.gd" id="6_21786"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v5fsn"]
+radius = 1.34305
+
+[node name="character" type="CharacterBody3D"]
+transform = Transform3D(0.127546, 0, 0, 0, 0.127546, 0, 0, 0, 0.127546, 0, 0, 0)
+script = ExtResource("1_jjoig")
+
+[node name="hitbox" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_v5fsn")
+
+[node name="saurieng" parent="." instance=ExtResource("1_sh03c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00216377, -0.0126493, -0.0400163)
+
+[node name="eye" type="Node3D" parent="saurieng"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0362324)
+script = ExtResource("3_hsn4h")
+
+[node name="cam" type="Camera3D" parent="saurieng/eye"]
+transform = Transform3D(7.84031, 0, 0, 0, 7.84031, 2.33659e-07, 0, -2.33659e-07, 7.84031, 0.00216377, -0.00361121, -0.103045)
+cull_mask = 1048574
+fov = 86.2
+
+[node name="hand" type="Node3D" parent="saurieng/eye/cam"]
+transform = Transform3D(0.883075, -1.85231e-09, 0.0621533, 1.85231e-09, 0.88526, 6.51053e-11, -0.0621533, 6.51053e-11, 0.883075, 0.122945, -0.0659694, -0.08641)
+
+[node name="caibuatom" parent="saurieng/eye/cam" instance=ExtResource("4_r8gsf")]
+transform = Transform3D(0.00952454, -7.95725e-09, 0.267001, 0.26019, 0.0599641, -0.00928154, -0.059926, 0.260355, 0.0021377, 0.140027, -0.0641656, -0.115282)
+
+[node name="denpin" parent="saurieng/eye/cam/caibuatom" instance=ExtResource("5_4utui")]
+transform = Transform3D(0.0268444, 0.509515, -0.115751, -0.0357954, 0.117424, 0.508581, 0.52127, -0.0181756, 0.040885, 0.0878006, -0.118148, -0.0626455)
+script = ExtResource("6_21786")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="saurieng/eye/cam/caibuatom/denpin"]
+transform = Transform3D(4.70787, 0, -2.98023e-08, 8.88178e-16, 4.70787, 1.42109e-14, 2.98023e-08, -2.84217e-14, 4.70787, 0.0147277, 5.96046e-08, -0.209251)
+layers = 2
+light_energy = 2.455
+light_volumetric_fog_energy = 3.101
+shadow_enabled = true
+spot_range = 4.59622
+spot_angle = 28.4315

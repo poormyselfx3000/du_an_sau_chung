@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://com4ikijbgnln"]
+
+[ext_resource type="Script" path="res://character.gd" id="1_jjoig"]
+[ext_resource type="PackedScene" uid="uid://c5gyp71plqi11" path="res://assets/model/saurieng.glb" id="1_sh03c"]
+[ext_resource type="Script" path="res://Node3D.gd" id="3_hsn4h"]
+[ext_resource type="Script" path="res://cam.gd" id="3_v47kd"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_v5fsn"]
+radius = 1.34305
+
+[node name="character" type="CharacterBody3D"]
+transform = Transform3D(0.127546, 0, 0, 0, 0.127546, 0, 0, 0, 0.127546, 0, 0, 0)
+script = ExtResource("1_jjoig")
+
+[node name="hitbox" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_v5fsn")
+
+[node name="saurieng" parent="." instance=ExtResource("1_sh03c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00216377, -0.0126493, -0.0400163)
+
+[node name="Node3D" type="Node3D" parent="saurieng"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.16782)
+script = ExtResource("3_hsn4h")
+
+[node name="cam" type="Camera3D" parent="saurieng/Node3D"]
+transform = Transform3D(7.84034, 0, 0, 0, 7.84034, 2.3366e-07, 0, -2.3366e-07, 7.84034, 0.00216377, -0.00361121, 0.0541191)
+fov = 86.2
+script = ExtResource("3_v47kd")

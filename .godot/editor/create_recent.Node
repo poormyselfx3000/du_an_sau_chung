@@ -1,0 +1,7 @@
+SpotLight3D
+Node3D
+Camera3D
+CollisionShape3D
+CharacterBody3D
+OmniLight3D
+CSGBox3D
