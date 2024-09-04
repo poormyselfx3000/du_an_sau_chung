@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://6okluevilh4r"]
+
+[ext_resource type="PackedScene" uid="uid://crjftoioje6r1" path="res://assets/model/CONRONG.glb" id="1_jgirf"]
+
+[node name="conrong" type="CharacterBody3D"]
+
+[node name="CONRONG" parent="." instance=ExtResource("1_jgirf")]

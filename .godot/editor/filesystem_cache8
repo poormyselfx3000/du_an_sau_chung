@@ -1,14 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1725412794
+::res://::1725414649
 cam.gd::GDScript::-1::1725390361::0::1::::<>RefCounted<>::
 character.gd::GDScript::-1::1725387705::0::1::::<>CharacterBody3D<>::
-character.tscn::PackedScene::5782033328511282583::1725409205::0::1::::<><>::res://character.gd<>uid://c5gyp71plqi11::::res://assets/model/saurieng.glb<>res://Node3D.gd<>uid://hboqhpmpcj8r::::res://assets/model/caibuatom.glb<>uid://bf8ym0a2e18ku::::res://assets/model/denpin.glb<>res://assets/model/denpin.gd
 icon.svg::CompressedTexture2D::2870180611268253508::1725306323::1725306332::1::::<><>::
 Node3D.gd::GDScript::-1::1725320101::0::1::::<>Node3D<>::
 ::res://assets/::1725306669
-::res://assets/model/::1725409060
+::res://assets/model/::1725414598
 caibuatom.glb::PackedScene::494265285222372823::1725407010::1725407124::1::::<><>::
 caibuatom_Cylinder Base Color.png::CompressedTexture2D::81470651878664932::1725407011::1725407012::1::::<><>::
+CONRONG.glb::PackedScene::5984969372400969928::1725414576::1725414598::1::::<><>::uid://bcaoli8dfvcon::::res://assets/model/CONRONG_Sphere Base Color.png
+CONRONG_Sphere Base Color.png::CompressedTexture2D::2527668523910013193::1725414597::1725414598::1::::<><>::
 denpin.gd::GDScript::-1::1725390859::0::1::::<>Node3D<>::
 denpin.glb::PackedScene::2806969319437405276::1725389533::1725389621::1::::<><>::
 denpin_Cylinder Base Color.png::CompressedTexture2D::6913800308418326100::1725389547::1725389548::1::::<><>::
@@ -46,6 +47,8 @@ garage_floor_nor_gl_2k.jpg::CompressedTexture2D::3946815508089529073::1725405267
 medieval_red_brick_arm_2k.jpg::CompressedTexture2D::8226400759761707512::1725405649::1725405881::1::::<><>::
 medieval_red_brick_diff_2k.jpg::CompressedTexture2D::9156340035541423552::1725405649::1725405778::1::::<><>::
 medieval_red_brick_nor_gl_2k.jpg::CompressedTexture2D::4405219637960185347::1725405649::1725405881::1::::<><>::
-::res://scene/::1725409263
-main.tscn::PackedScene::170993957972054609::1725409263::0::1::::<><>::uid://mi4ctdmf8cfa::::res://assets/textures/san/garage_floor_diff_2k.jpg<>uid://dcl1iyryhmsbo::::res://assets/textures/floor/metal_plate_02_diff_2k.jpg<>uid://ctxoph3psgotl::::res://assets/textures/san/garage_floor_arm_2k.jpg<>uid://budbomd3oyg3t::::res://assets/textures/floor/metal_plate_02_arm_2k.jpg<>uid://bwh4qe32kn6pp::::res://assets/textures/san/garage_floor_nor_gl_2k.jpg<>uid://com4ikijbgnln::::res://character.tscn<>uid://d3pnt2rt5q8ym::::res://assets/textures/tuong/medieval_red_brick_diff_2k.jpg<>uid://dpg6vbejvgjye::::res://assets/textures/tuong/medieval_red_brick_arm_2k.jpg<>uid://b306lalxdcpsd::::res://assets/textures/tuong/medieval_red_brick_nor_gl_2k.jpg<>uid://nndwxovhwh18::::res://assets/textures/floor/metal_plate_02_nor_gl_2k.jpg<>uid://cvyqdyj20vtqh::::res://assets/model/caiban/outdoor_table_chair_set_01_2k.gltf
+::res://scene/::1725414649
+character.tscn::PackedScene::5782033328511282583::1725414667::0::1::::<><>::res://character.gd<>uid://c5gyp71plqi11::::res://assets/model/saurieng.glb<>res://Node3D.gd<>uid://hboqhpmpcj8r::::res://assets/model/caibuatom.glb<>uid://bf8ym0a2e18ku::::res://assets/model/denpin.glb<>res://assets/model/denpin.gd
+conrong.tscn::PackedScene::2205383312607955839::1725414639::0::1::::<><>::uid://crjftoioje6r1::::res://assets/model/CONRONG.glb
+main.tscn::PackedScene::170993957972054609::1725414649::0::1::::<><>::uid://mi4ctdmf8cfa::::res://assets/textures/san/garage_floor_diff_2k.jpg<>uid://dcl1iyryhmsbo::::res://assets/textures/floor/metal_plate_02_diff_2k.jpg<>uid://ctxoph3psgotl::::res://assets/textures/san/garage_floor_arm_2k.jpg<>uid://budbomd3oyg3t::::res://assets/textures/floor/metal_plate_02_arm_2k.jpg<>uid://bwh4qe32kn6pp::::res://assets/textures/san/garage_floor_nor_gl_2k.jpg<>uid://com4ikijbgnln::::res://scene/character.tscn<>uid://d3pnt2rt5q8ym::::res://assets/textures/tuong/medieval_red_brick_diff_2k.jpg<>uid://dpg6vbejvgjye::::res://assets/textures/tuong/medieval_red_brick_arm_2k.jpg<>uid://b306lalxdcpsd::::res://assets/textures/tuong/medieval_red_brick_nor_gl_2k.jpg<>uid://nndwxovhwh18::::res://assets/textures/floor/metal_plate_02_nor_gl_2k.jpg<>uid://cvyqdyj20vtqh::::res://assets/model/caiban/outdoor_table_chair_set_01_2k.gltf
 ::res://scripts/::1725306698

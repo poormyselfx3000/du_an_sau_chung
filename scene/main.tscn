@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ctxoph3psgotl" path="res://assets/textures/san/garage_floor_arm_2k.jpg" id="2_3n3ft"]
 [ext_resource type="Texture2D" uid="uid://budbomd3oyg3t" path="res://assets/textures/floor/metal_plate_02_arm_2k.jpg" id="2_dwp0n"]
 [ext_resource type="Texture2D" uid="uid://bwh4qe32kn6pp" path="res://assets/textures/san/garage_floor_nor_gl_2k.jpg" id="3_boccn"]
-[ext_resource type="PackedScene" uid="uid://com4ikijbgnln" path="res://character.tscn" id="3_xqp6p"]
+[ext_resource type="PackedScene" uid="uid://com4ikijbgnln" path="res://scene/character.tscn" id="3_xqp6p"]
 [ext_resource type="Texture2D" uid="uid://d3pnt2rt5q8ym" path="res://assets/textures/tuong/medieval_red_brick_diff_2k.jpg" id="4_ypcrx"]
 [ext_resource type="Texture2D" uid="uid://dpg6vbejvgjye" path="res://assets/textures/tuong/medieval_red_brick_arm_2k.jpg" id="5_3hqk4"]
 [ext_resource type="Texture2D" uid="uid://b306lalxdcpsd" path="res://assets/textures/tuong/medieval_red_brick_nor_gl_2k.jpg" id="6_dvdgu"]
@@ -126,11 +126,12 @@ material = SubResource("StandardMaterial3D_ncaue")
 [node name="OmniLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.397885, 0.917435, 0, -0.917435, 0.397885, 0, 2.93356, 0)
 layers = 2
+light_energy = 2.131
 shadow_enabled = true
 spot_range = 6.07411
 
 [node name="character" parent="." instance=ExtResource("3_xqp6p")]
-transform = Transform3D(0.227431, 0, 0, 0, 0.227431, 0, 0, 0, 0.227431, 0, 2, -16)
+transform = Transform3D(-0.22743, 0, 0.000492223, 0, 0.227431, 0, -0.000492223, 0, -0.22743, 0, 2, -7.79917)
 
 [node name="outdoor_table_chair_set_01_2k" parent="." instance=ExtResource("11_uyyxd")]
 transform = Transform3D(-0.103608, 0, 0.994618, 0, 1, 0, -0.994618, 0, -0.103608, -0.657364, 0.012848, -0.46446)
