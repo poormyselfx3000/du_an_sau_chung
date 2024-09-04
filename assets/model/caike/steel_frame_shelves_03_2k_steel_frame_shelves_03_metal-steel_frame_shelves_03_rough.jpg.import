@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://com5206cbcaqc"
+path="res://.godot/imported/steel_frame_shelves_03_2k_steel_frame_shelves_03_metal-steel_frame_shelves_03_rough.jpg-cbeb6b0685eb6457f37e704e9bdfe939.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "db2ae0ac1b3d1188af72f4e2987a293c"
+}
+
+[deps]
+
+source_file="res://assets/model/caike/steel_frame_shelves_03_2k_steel_frame_shelves_03_metal-steel_frame_shelves_03_rough.jpg"
+dest_files=["res://.godot/imported/steel_frame_shelves_03_2k_steel_frame_shelves_03_metal-steel_frame_shelves_03_rough.jpg-cbeb6b0685eb6457f37e704e9bdfe939.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

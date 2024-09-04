@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@onready var head = $saurieng
+@onready var head = $truccodinh
 
 const SPEED = 3.5
 const JUMP_VELOCITY = 4.5
