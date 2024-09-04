@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://djrslegvfbs2x"]
+
+[ext_resource type="PackedScene" uid="uid://cf8esg5htj6s4" path="res://assets/model/chiakhoa.glb" id="1_2rsd4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4jgxw"]
+size = Vector3(0.481079, 0.810463, 0.126465)
+
+[node name="key" type="Area3D" groups=["item"]]
+transform = Transform3D(-1.44567e-09, -0.033073, 0, -1.44567e-09, 0, 0.033073, -0.033073, 1.44567e-09, -1.44567e-09, 0, 0, 0)
+
+[node name="key_hitbox" type="CollisionShape3D" parent="."]
+transform = Transform3D(5.19616, 1.13687e-13, -2.84217e-14, -2.84217e-14, 5.19616, 8.97855e-20, 2.84217e-14, 2.5411e-21, 5.19616, 0.00860595, -0.106087, 0.00024414)
+shape = SubResource("BoxShape3D_4jgxw")
+
+[node name="chiakhoa" parent="." instance=ExtResource("1_2rsd4")]
+transform = Transform3D(0.539658, 0, 0, 0, -2.35892e-08, -0.539658, 0, 0.539658, -2.35892e-08, 0.00608897, -0.326209, -0.000793455)

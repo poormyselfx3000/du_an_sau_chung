@@ -104,23 +104,6 @@ _data = {
 "jump": SubResource("Animation_bmvh2")
 }
 
-[sub_resource type="Animation" id="Animation_4nd7t"]
-resource_name = "hand_shake"
-length = 0.3
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("truccodinh/eye/cam/caibuatom:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.149121, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.140027, -0.0641656, -0.115282), Vector3(0.140027, -0.0393311, -0.116734), Vector3(0.140027, -0.0641656, -0.115282)]
-}
-
 [sub_resource type="Animation" id="Animation_23yak"]
 length = 0.001
 tracks/0/type = "value"
@@ -152,6 +135,23 @@ tracks/0/keys = {
 "values": [Vector3(0.140027, -0.0641656, -0.115282), Vector3(0.140027, -0.0827017, -0.115058), Vector3(0.140027, -0.00969719, -0.11594), Vector3(0.140027, -0.0487387, -0.115468), Vector3(0.140027, -0.0827017, -0.115058), Vector3(0.140027, -0.0641656, -0.115282)]
 }
 
+[sub_resource type="Animation" id="Animation_4nd7t"]
+resource_name = "hand_shake"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("truccodinh/eye/cam/caibuatom:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.149121, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.140027, -0.0641656, -0.115282), Vector3(0.140027, -0.0393311, -0.116734), Vector3(0.140027, -0.0641656, -0.115282)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ewopj"]
 _data = {
 "RESET": SubResource("Animation_23yak"),
@@ -159,7 +159,7 @@ _data = {
 "hand_shake": SubResource("Animation_4nd7t")
 }
 
-[node name="character" type="CharacterBody3D"]
+[node name="character" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(0.127546, 0, 0, 0, 0.127546, 0, 0, 0, 0.127546, 0, 0, 0)
 script = ExtResource("1_jjoig")
 

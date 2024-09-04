@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://co3il2lsa8ef"]
+[gd_scene load_steps=17 format=3 uid="uid://co3il2lsa8ef"]
 
 [ext_resource type="Texture2D" uid="uid://mi4ctdmf8cfa" path="res://assets/textures/san/garage_floor_diff_2k.jpg" id="1_gokyt"]
 [ext_resource type="Texture2D" uid="uid://dcl1iyryhmsbo" path="res://assets/textures/floor/metal_plate_02_diff_2k.jpg" id="1_w7x7j"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b306lalxdcpsd" path="res://assets/textures/tuong/medieval_red_brick_nor_gl_2k.jpg" id="6_dvdgu"]
 [ext_resource type="Texture2D" uid="uid://nndwxovhwh18" path="res://assets/textures/floor/metal_plate_02_nor_gl_2k.jpg" id="9_j8wg6"]
 [ext_resource type="PackedScene" uid="uid://cvyqdyj20vtqh" path="res://assets/model/caiban/outdoor_table_chair_set_01_2k.gltf" id="11_uyyxd"]
+[ext_resource type="PackedScene" uid="uid://djrslegvfbs2x" path="res://scene/key.tscn" id="12_rmpic"]
 
 [sub_resource type="Environment" id="Environment_7revu"]
 background_mode = 2
@@ -135,3 +136,6 @@ transform = Transform3D(-0.22743, 0, 0.000492223, 0, 0.227431, 0, -0.000492223, 
 
 [node name="outdoor_table_chair_set_01_2k" parent="." instance=ExtResource("11_uyyxd")]
 transform = Transform3D(-0.103608, 0, 0.994618, 0, 1, 0, -0.994618, 0, -0.103608, -0.657364, 0.012848, -0.46446)
+
+[node name="key" parent="." instance=ExtResource("12_rmpic")]
+transform = Transform3D(-1.44567e-09, -0.033073, 0, -1.44567e-09, 0, 0.033073, -0.033073, 1.44567e-09, -1.44567e-09, 0.582213, 0.0145164, 0)
