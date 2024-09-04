@@ -57,3 +57,8 @@ transform = Transform3D(2.1424, -3.55271e-14, -4.9738e-14, -7.10543e-15, -9.3647
 libraries = {
 "": SubResource("AnimationLibrary_nya87")
 }
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -6,8 +6,11 @@ extends CharacterBody3D
 
 const SPEED = 3.5
 const JUMP_VELOCITY = 4.5
-var SMOOTH_FACTOR = 0.1
+var SMOOTH_FACTOR = 0.3
 @export var mouse_sens = 0.1
+var nearkey = false
+var neardoor = false
+var check_key = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -18,20 +21,24 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
 		head.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
-		head.rotation.x = clamp(head.rotation.x,deg_to_rad(-70),deg_to_rad(89))
+		head.rotation.x = clamp(head.rotation.x,deg_to_rad(-55),deg_to_rad(89))
 
 
 func _physics_process(delta):
-	# Add the gravity.
+
 	if not is_on_floor():
 		velocity.y -= gravity * delta * 2
 
-	# Handle jump.
 	if Input.is_action_just_pressed("space") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	
+	if Input.is_action_just_pressed("interactive") and nearkey == true:
+		check_key = true
+	
+	if Input.is_action_just_pressed("interactive") and neardoor == true and check_key == true and $"../door".open == false:
+		$"../door".animation.play("open")
+		$"../door".open = true
+		
 	var input_dir = Input.get_vector("a", "d", "w", "s")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -49,7 +56,31 @@ func _physics_process(delta):
 		if is_on_floor():
 			cam_animation.play("RESET")
 			hand_animation.play("RESET")
+		
 		else:
 			cam_animation.play("jump")
 			hand_animation.play("hand_jump")
 	move_and_slide()
+
+
+func _on_key_body_entered(body):
+	var target = body
+	if target.is_in_group("player"):
+		nearkey = true
+
+func _on_key_body_exited(body):
+	var target = body
+	if target.is_in_group("player"):
+		nearkey = false
+
+
+func _on_door_body_entered(body):
+	var target = body
+	if target.is_in_group("player"):
+		neardoor = true
+
+
+func _on_door_body_exited(body):
+	var target = body
+	if target.is_in_group("player"):
+		neardoor = false

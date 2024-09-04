@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://co3il2lsa8ef"]
+[gd_scene load_steps=18 format=3 uid="uid://co3il2lsa8ef"]
 
 [ext_resource type="Texture2D" uid="uid://mi4ctdmf8cfa" path="res://assets/textures/san/garage_floor_diff_2k.jpg" id="1_gokyt"]
 [ext_resource type="Texture2D" uid="uid://dcl1iyryhmsbo" path="res://assets/textures/floor/metal_plate_02_diff_2k.jpg" id="1_w7x7j"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://nndwxovhwh18" path="res://assets/textures/floor/metal_plate_02_nor_gl_2k.jpg" id="9_j8wg6"]
 [ext_resource type="PackedScene" uid="uid://cvyqdyj20vtqh" path="res://assets/model/caiban/outdoor_table_chair_set_01_2k.gltf" id="11_uyyxd"]
 [ext_resource type="PackedScene" uid="uid://djrslegvfbs2x" path="res://scene/key.tscn" id="12_rmpic"]
+[ext_resource type="PackedScene" uid="uid://xkbnh5kjhyvj" path="res://door.tscn" id="13_l8w4d"]
 
 [sub_resource type="Environment" id="Environment_7revu"]
 background_mode = 2
@@ -125,7 +126,7 @@ size = Vector3(9.01074, 3, 0.231201)
 material = SubResource("StandardMaterial3D_ncaue")
 
 [node name="OmniLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.397885, 0.917435, 0, -0.917435, 0.397885, 0, 2.93356, 0)
+transform = Transform3D(1, 0, 0, 0, 0.397885, 0.917435, 0, -0.917435, 0.397885, 0.403072, 2.93356, 0)
 layers = 2
 light_energy = 2.131
 shadow_enabled = true
@@ -138,4 +139,12 @@ transform = Transform3D(-0.22743, 0, 0.000492223, 0, 0.227431, 0, -0.000492223, 
 transform = Transform3D(-0.103608, 0, 0.994618, 0, 1, 0, -0.994618, 0, -0.103608, -0.657364, 0.012848, -0.46446)
 
 [node name="key" parent="." instance=ExtResource("12_rmpic")]
-transform = Transform3D(-1.44567e-09, -0.033073, 0, -1.44567e-09, 0, 0.033073, -0.033073, 1.44567e-09, -1.44567e-09, 0.582213, 0.0145164, 0)
+transform = Transform3D(-1.49578e-09, -0.0330524, 0.00116692, -1.39376e-09, 0.00116692, 0.0330524, -0.033073, 1.44567e-09, -1.44567e-09, -0.184908, 0.41193, -0.66846)
+
+[node name="door" parent="." instance=ExtResource("13_l8w4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06177, 1.22963, 0.406017)
+
+[connection signal="body_entered" from="key" to="character" method="_on_key_body_entered"]
+[connection signal="body_exited" from="key" to="character" method="_on_key_body_exited"]
+[connection signal="body_entered" from="door" to="character" method="_on_door_body_entered"]
+[connection signal="body_exited" from="door" to="character" method="_on_door_body_exited"]

@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://xkbnh5kjhyvj"]
+
+[ext_resource type="Script" path="res://door.gd" id="1_7keel"]
+[ext_resource type="PackedScene" uid="uid://c2n1a3vopq2wa" path="res://assets/model/door.glb" id="1_mtjnv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0jo8t"]
+size = Vector3(1.08063, 2.42761, 0.807343)
+
+[sub_resource type="Animation" id="Animation_scpvu"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("truc_xoay:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.404961, 0), Vector3(0, -0.708682, 0), Vector3(0, -1.41736, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_usvrd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("truc_xoay:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a4rk7"]
+_data = {
+"RESET": SubResource("Animation_usvrd"),
+"open": SubResource("Animation_scpvu")
+}
+
+[node name="door" type="Area3D"]
+script = ExtResource("1_7keel")
+
+[node name="vung_interactive" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00106812, 0.160828, -0.21434)
+shape = SubResource("BoxShape3D_0jo8t")
+
+[node name="animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_a4rk7")
+}
+
+[node name="truc_xoay" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.567979, 0, 0)
+
+[node name="door" parent="truc_xoay" instance=ExtResource("1_mtjnv")]
+transform = Transform3D(3.58943, 0, 0, 0, 3.58943, 0, 0, 0, 3.58943, 0.567979, 0, 0)
