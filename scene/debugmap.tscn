@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ooih2qyuj81d"]
 
-[ext_resource type="PackedScene" uid="uid://com4ikijbgnln" path="res://scene/character.tscn" id="1_0ekhw"]
-[ext_resource type="PackedScene" uid="uid://6okluevilh4r" path="res://scene/conrong.tscn" id="2_g6xr8"]
+[ext_resource type="PackedScene" uid="uid://com4ikijbgnln" path="res://scene/character.tscn" id="1_qn7d5"]
+[ext_resource type="PackedScene" uid="uid://6okluevilh4r" path="res://scene/conrong.tscn" id="2_curov"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dsfb0"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -114,13 +114,8 @@ use_collision = true
 size = Vector3(3.21204, 4.99243, 11.593)
 material = SubResource("StandardMaterial3D_4s677")
 
-[node name="character" parent="." instance=ExtResource("1_0ekhw")]
+[node name="character" parent="." instance=ExtResource("1_qn7d5")]
 transform = Transform3D(0.127546, 0, 0, 0, 0.127546, 0, 0, 0, 0.127546, 8, 2, 0)
 
-[node name="hitbox" parent="character" index="0"]
-transform = Transform3D(1.16755, 0, 0, 0, 1.16755, 0, 0, 0, 1.16755, 0, 0, 0)
-
-[node name="conrong" parent="." instance=ExtResource("2_g6xr8")]
+[node name="conrong" parent="." instance=ExtResource("2_curov")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
-[editable path="character"]
