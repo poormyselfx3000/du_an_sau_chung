@@ -117,5 +117,10 @@ material = SubResource("StandardMaterial3D_4s677")
 [node name="character" parent="." instance=ExtResource("1_0ekhw")]
 transform = Transform3D(0.127546, 0, 0, 0, 0.127546, 0, 0, 0, 0.127546, 8, 2, 0)
 
+[node name="hitbox" parent="character" index="0"]
+transform = Transform3D(1.16755, 0, 0, 0, 1.16755, 0, 0, 0, 1.16755, 0, 0, 0)
+
 [node name="conrong" parent="." instance=ExtResource("2_g6xr8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[editable path="character"]

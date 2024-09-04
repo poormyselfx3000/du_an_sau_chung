@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://com4ikijbgnln"]
+[gd_scene load_steps=19 format=3 uid="uid://com4ikijbgnln"]
 
 [ext_resource type="Script" path="res://scripts/character.gd" id="1_jjoig"]
 [ext_resource type="PackedScene" uid="uid://c5gyp71plqi11" path="res://assets/model/saurieng.glb" id="1_sh03c"]
@@ -12,6 +12,7 @@ radius = 1.34305
 
 [sub_resource type="Animation" id="Animation_2jhbj"]
 length = 0.001
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -50,6 +51,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_b45hb"]
 length = 0.001
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -74,16 +76,87 @@ tracks/0/path = NodePath("truccodinh/eye/cam:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.150164, 0.3),
+"times": PackedFloat32Array(0, 0.151164, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(-2.98023e-08, 0, 0), Vector3(-0.034034, 0, 0), Vector3(-2.98023e-08, 0, 0)]
+"values": [Vector3(-2.98023e-08, 0, 0), Vector3(-0.0236318, 0, 0), Vector3(-2.98023e-08, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bmvh2"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("truccodinh/eye/cam:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.102138, 0.527562, 0.796252, 0.998371),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0233124, 0, 0), Vector3(-0.118503, 0, 0), Vector3(0.000829861, 0, 0), Vector3(0.125993, 0, 0), Vector3(-0.0233124, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t87no"]
 _data = {
 "RESET": SubResource("Animation_b45hb"),
-"camshake": SubResource("Animation_ipkkg")
+"camshake": SubResource("Animation_ipkkg"),
+"jump": SubResource("Animation_bmvh2")
+}
+
+[sub_resource type="Animation" id="Animation_4nd7t"]
+resource_name = "hand_shake"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("truccodinh/eye/cam/caibuatom:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.149121, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.140027, -0.0641656, -0.115282), Vector3(0.140027, -0.0393311, -0.116734), Vector3(0.140027, -0.0641656, -0.115282)]
+}
+
+[sub_resource type="Animation" id="Animation_23yak"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("truccodinh/eye/cam/caibuatom:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.140027, -0.0641656, -0.115282)]
+}
+
+[sub_resource type="Animation" id="Animation_d5jx8"]
+resource_name = "hand_jump"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("truccodinh/eye/cam/caibuatom:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0348207, 0.226334, 0.509252, 0.59848, 0.698589),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.140027, -0.0641656, -0.115282), Vector3(0.140027, -0.0827017, -0.115058), Vector3(0.140027, -0.00969719, -0.11594), Vector3(0.140027, -0.0487387, -0.115468), Vector3(0.140027, -0.0827017, -0.115058), Vector3(0.140027, -0.0641656, -0.115282)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ewopj"]
+_data = {
+"RESET": SubResource("Animation_23yak"),
+"hand_jump": SubResource("Animation_d5jx8"),
+"hand_shake": SubResource("Animation_4nd7t")
 }
 
 [node name="character" type="CharacterBody3D"]
@@ -111,7 +184,7 @@ fov = 86.2
 transform = Transform3D(0.883075, -1.85231e-09, 0.0621533, 1.85231e-09, 0.88526, 6.51053e-11, -0.0621533, 6.51053e-11, 0.883075, 0.122945, -0.0659694, -0.08641)
 
 [node name="caibuatom" parent="truccodinh/eye/cam" instance=ExtResource("4_r8gsf")]
-transform = Transform3D(0.00952454, -7.95725e-09, 0.267001, 0.26019, 0.0599641, -0.00928154, -0.059926, 0.260355, 0.0021377, 0.140027, -0.0641656, -0.115282)
+transform = Transform3D(0.00952454, -7.95725e-09, 0.267001, 0.259538, 0.0627306, -0.00925828, -0.0626908, 0.259702, 0.00223632, 0.140027, -0.0641656, -0.115282)
 
 [node name="denpin" parent="truccodinh/eye/cam/caibuatom" instance=ExtResource("5_4utui")]
 transform = Transform3D(0.0268444, 0.509515, -0.115751, -0.0357954, 0.117424, 0.508581, 0.52127, -0.0181756, 0.040885, 0.0878006, -0.118148, -0.0626455)
@@ -137,3 +210,6 @@ libraries = {
 }
 
 [node name="hand_animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ewopj")
+}
