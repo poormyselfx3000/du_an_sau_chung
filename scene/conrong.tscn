@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://6okluevilh4r"]
+[gd_scene load_steps=13 format=3 uid="uid://6okluevilh4r"]
 
 [ext_resource type="PackedScene" uid="uid://crjftoioje6r1" path="res://assets/model/CONRONG.glb" id="1_jgirf"]
 [ext_resource type="Script" path="res://scripts/conrong/conrong.gd" id="1_onl7m"]
@@ -9,12 +9,13 @@
 [ext_resource type="Script" path="res://scripts/conrong/tree/TracePlayer.gd" id="6_v4l2v"]
 [ext_resource type="Script" path="res://scripts/conrong/tree/PickAPlace.gd" id="7_rc3tn"]
 [ext_resource type="Script" path="res://scripts/conrong/tree/RunToIt.gd" id="8_2s62h"]
+[ext_resource type="Script" path="res://scripts/conrong/VungPhatHien.gd" id="10_aixa2"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7vah1"]
 radius = 0.99938
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_im2u3"]
-height = 0.911243
+height = 1.92248
 radius = 6.00573
 
 [node name="conrong" type="CharacterBody3D"]
@@ -29,7 +30,7 @@ shape = SubResource("SphereShape3D_7vah1")
 
 [node name="BeehaveTree" type="Node" parent="." node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("2_cumif")
-blackboard = NodePath("@Node@19575")
+blackboard = NodePath("@Node@17513")
 actor = NodePath("..")
 
 [node name="SelectorReactiveComposite" type="Node" parent="BeehaveTree"]
@@ -56,6 +57,10 @@ script = ExtResource("8_2s62h")
 [node name="VungPhatHien" type="Area3D" parent="."]
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("10_aixa2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VungPhatHien"]
 shape = SubResource("CylinderShape3D_im2u3")
+
+[connection signal="body_entered" from="VungPhatHien" to="VungPhatHien" method="_on_body_entered"]
+[connection signal="body_exited" from="VungPhatHien" to="VungPhatHien" method="_on_body_exited"]

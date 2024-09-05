@@ -9,9 +9,14 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func set_target_position(new_position: Vector3):
 	pass
 
-func player_in_vung_phat_hien():
-	pass
-	
+
+#------- SLIME view
+@onready var vung_phat_hien = $VungPhatHien
+
+func player_in_vung_phat_hien() -> CharacterBody3D:
+	return vung_phat_hien.player_in_the_area
+#------- SLIME view
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
