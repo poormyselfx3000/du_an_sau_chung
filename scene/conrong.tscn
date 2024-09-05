@@ -24,13 +24,14 @@ collision_mask = 3
 script = ExtResource("1_onl7m")
 
 [node name="CONRONG" parent="." instance=ExtResource("1_jgirf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_7vah1")
 
 [node name="BeehaveTree" type="Node" parent="." node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("2_cumif")
-blackboard = NodePath("@Node@17513")
+blackboard = NodePath("@Node@17497")
 actor = NodePath("..")
 
 [node name="SelectorReactiveComposite" type="Node" parent="BeehaveTree"]
@@ -61,6 +62,8 @@ script = ExtResource("10_aixa2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="VungPhatHien"]
 shape = SubResource("CylinderShape3D_im2u3")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [connection signal="body_entered" from="VungPhatHien" to="VungPhatHien" method="_on_body_entered"]
 [connection signal="body_exited" from="VungPhatHien" to="VungPhatHien" method="_on_body_exited"]
