@@ -10,8 +10,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func set_target_position(new_position: Vector3):
 	target = new_position
-
-
+	look_at(target)
+ 
 #nav
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 	

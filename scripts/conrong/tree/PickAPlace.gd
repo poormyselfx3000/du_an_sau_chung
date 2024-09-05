@@ -7,9 +7,9 @@ func tick(actor, blackboard: Blackboard):
 	# will use this random for now 
 	var new_position = Vector3(
 		spawn_location.x + randf_range(-1000, 1000),
-		spawn_location.z + randf_range(-1000, 1000),
-		#spawn_location.y + randf_range(-1000, 1000)
-		0
+		50,
+		#spawn_location.y + randf_range(-1000, 1000),
+		spawn_location.z + randf_range(-1000, 1000)
 	)
 	actor.set_target_position(new_position)
 	return SUCCESS

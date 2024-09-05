@@ -36,7 +36,7 @@ environment = SubResource("Environment_0s8hf")
 transform = Transform3D(0.127546, 0, 0, 0, 0.127546, 0, 0, 0, 0.127546, 8, 2, 0)
 
 [node name="conrong" parent="." instance=ExtResource("2_curov")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82735, 2.35656, -7.23877)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.82735, 2.35656, -15.3445)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_hca2r")
