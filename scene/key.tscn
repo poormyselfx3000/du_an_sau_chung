@@ -43,11 +43,11 @@ _data = {
 }
 
 [node name="key" type="Area3D" groups=["item"]]
-transform = Transform3D(-1.44567e-09, -0.033073, 0, -1.44567e-09, 0, 0.033073, -0.033073, 1.44567e-09, -1.44567e-09, 0, 0, 0)
+transform = Transform3D(-1.44567e-09, -0.033073, 0, -1.44567e-09, 0, 0.033073, -0.033073, 1.44567e-09, -1.44567e-09, -2.80139e-23, -0.180873, 7.90621e-09)
 script = ExtResource("1_mnij6")
 
 [node name="key_hitbox" type="CollisionShape3D" parent="."]
-transform = Transform3D(5.19616, 1.13687e-13, -2.84217e-14, -2.84217e-14, 5.19616, 2.7698e-19, 2.84217e-14, 2.5411e-21, 5.19616, 0.0886067, 0.463775, 2.77275)
+transform = Transform3D(5.19616, 1.27898e-13, -4.26326e-14, -4.26326e-14, 5.19616, 2.7698e-19, 4.26326e-14, 1.69407e-21, 5.19616, 0.0886067, 0.463775, 6.03104)
 shape = SubResource("BoxShape3D_4jgxw")
 
 [node name="chiakhoa" parent="." instance=ExtResource("1_2rsd4")]

@@ -29,7 +29,7 @@ shape = SubResource("SphereShape3D_7vah1")
 
 [node name="BeehaveTree" type="Node" parent="." node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("2_cumif")
-blackboard = NodePath("@Node@26601")
+blackboard = NodePath("@Node@19575")
 actor = NodePath("..")
 
 [node name="SelectorReactiveComposite" type="Node" parent="BeehaveTree"]

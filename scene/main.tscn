@@ -77,7 +77,7 @@ uv1_triplanar = true
 environment = SubResource("Environment_7revu")
 
 [node name="block" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.243652, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0399401, -0.243652, 0.00729585)
 layers = 2
 use_collision = true
 size = Vector3(50, 0.513, 50)
@@ -120,6 +120,13 @@ material = SubResource("StandardMaterial3D_4ta6s")
 
 [node name="block2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00537, 1.51215, 0.384399)
+layers = 2
+use_collision = true
+size = Vector3(9.01074, 3, 0.231201)
+material = SubResource("StandardMaterial3D_ncaue")
+
+[node name="block8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11065, 1.51215, 0.384399)
 layers = 2
 use_collision = true
 size = Vector3(9.01074, 3, 0.231201)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://co2g8wvnqs623"]
+
+[ext_resource type="Texture2D" uid="uid://c5snyse2tvh84" path="res://assets/ui/start_bt/start_nm.png" id="1_35e0l"]
+[ext_resource type="Texture2D" uid="uid://d0qouhvr0g72d" path="res://assets/ui/start_bt/start_click.png" id="2_8qi38"]
+
+[node name="mainmenu" type="Node3D"]
+
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 398.0
+offset_top = 152.0
+offset_right = 775.0
+offset_bottom = 337.0
+texture_normal = ExtResource("1_35e0l")
+texture_pressed = ExtResource("2_8qi38")
+stretch_mode = 0

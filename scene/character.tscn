@@ -215,8 +215,14 @@ libraries = {
 }
 
 [node name="warning" type="RichTextLabel" parent="."]
-offset_left = 345.0
+texture_filter = 1
+offset_left = 212.0
 offset_top = 485.0
-offset_right = 478.0
+offset_right = 966.0
 offset_bottom = 566.0
 text = "..."
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
