@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 3.5
 const JUMP_VELOCITY = 4.5
 
 var target: Vector3 = Vector3(0,0,0)
