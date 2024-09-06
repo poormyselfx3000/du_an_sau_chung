@@ -1,6 +1,5 @@
 [gd_scene load_steps=13 format=3 uid="uid://6okluevilh4r"]
 
-[ext_resource type="PackedScene" uid="uid://crjftoioje6r1" path="res://assets/model/CONRONG.glb" id="1_jgirf"]
 [ext_resource type="Script" path="res://scripts/conrong/conrong.gd" id="1_onl7m"]
 [ext_resource type="Script" path="res://addons/beehave/nodes/beehave_tree.gd" id="2_cumif"]
 [ext_resource type="Script" path="res://addons/beehave/nodes/composites/selector_reactive.gd" id="3_s3vmr"]
@@ -10,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/conrong/tree/PickAPlace.gd" id="7_rc3tn"]
 [ext_resource type="Script" path="res://scripts/conrong/tree/RunToIt.gd" id="8_2s62h"]
 [ext_resource type="Script" path="res://scripts/conrong/VungPhatHien.gd" id="10_aixa2"]
+[ext_resource type="PackedScene" uid="uid://dm2dbel7f3xny" path="res://assets/model/arealdragon.glb" id="10_tiukc"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7vah1"]
 radius = 0.99938
@@ -23,15 +23,12 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_onl7m")
 
-[node name="CONRONG" parent="." instance=ExtResource("1_jgirf")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_7vah1")
 
 [node name="BeehaveTree" type="Node" parent="." node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("2_cumif")
-blackboard = NodePath("@Node@17497")
+blackboard = NodePath("@Node@17510")
 actor = NodePath("..")
 
 [node name="SelectorReactiveComposite" type="Node" parent="BeehaveTree"]
@@ -65,5 +62,19 @@ shape = SubResource("CylinderShape3D_im2u3")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
+[node name="arealdragon" parent="." instance=ExtResource("10_tiukc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="arealdragon/Armature" index="0"]
+bones/2/rotation = Quaternion(-0.795413, -0.0131778, -0.0201967, 0.605588)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(0.128269, -0.00357326, 0.0254259, 0.991407)
+bones/4/rotation = Quaternion(0.0113654, -0.000953835, 0.0222006, 0.999688)
+bones/5/rotation = Quaternion(-0.0209197, -0.000234237, -0.051088, 0.998475)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.0167071, -2.43863e-05, 0.0342112, 0.999275)
+
 [connection signal="body_entered" from="VungPhatHien" to="VungPhatHien" method="_on_body_entered"]
 [connection signal="body_exited" from="VungPhatHien" to="VungPhatHien" method="_on_body_exited"]
+
+[editable path="arealdragon"]

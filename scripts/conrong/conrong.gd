@@ -36,6 +36,12 @@ const ACCEL = 10
 
 func _physics_process(delta):
 	# Add the gravity.
+	if velocity.length() >0 :
+		$arealdragon/AnimationPlayer.play("ArmatureAction")
+	
+	if velocity.length() == 0 :
+		$arealdragon/AnimationPlayer.stop()
+	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
