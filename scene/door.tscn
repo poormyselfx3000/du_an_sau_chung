@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://xkbnh5kjhyvj"]
 
-[ext_resource type="Script" path="res://door.gd" id="1_7keel"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="1_7keel"]
 [ext_resource type="PackedScene" uid="uid://tt6r0ut05hru" path="res://assets/model/wooden_door.glb" id="2_lf8xq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0jo8t"]

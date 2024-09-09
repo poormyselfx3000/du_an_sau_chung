@@ -1,8 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://com4ikijbgnln"]
+[gd_scene load_steps=18 format=3 uid="uid://com4ikijbgnln"]
 
 [ext_resource type="Script" path="res://scripts/character.gd" id="1_jjoig"]
 [ext_resource type="PackedScene" uid="uid://c5gyp71plqi11" path="res://assets/model/saurieng.glb" id="1_sh03c"]
-[ext_resource type="Script" path="res://Node3D.gd" id="3_hsn4h"]
 [ext_resource type="PackedScene" uid="uid://hboqhpmpcj8r" path="res://assets/model/caibuatom.glb" id="4_r8gsf"]
 [ext_resource type="PackedScene" uid="uid://bf8ym0a2e18ku" path="res://assets/model/denpin.glb" id="5_4utui"]
 [ext_resource type="Script" path="res://assets/model/denpin.gd" id="6_21786"]
@@ -174,7 +173,6 @@ visible = false
 
 [node name="eye" type="Node3D" parent="truccodinh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00216377, -0.0126493, -0.0037839)
-script = ExtResource("3_hsn4h")
 
 [node name="cam" type="Camera3D" parent="truccodinh/eye"]
 transform = Transform3D(7.84031, 0, 0, 0, 7.84031, 2.33659e-07, 0, -2.33659e-07, 7.84031, 0.00216377, -0.00361121, -0.103045)

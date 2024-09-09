@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://nndwxovhwh18" path="res://assets/textures/floor/metal_plate_02_nor_gl_2k.jpg" id="9_j8wg6"]
 [ext_resource type="PackedScene" uid="uid://cvyqdyj20vtqh" path="res://assets/model/caiban/outdoor_table_chair_set_01_2k.gltf" id="11_uyyxd"]
 [ext_resource type="PackedScene" uid="uid://djrslegvfbs2x" path="res://scene/key.tscn" id="12_rmpic"]
-[ext_resource type="PackedScene" uid="uid://xkbnh5kjhyvj" path="res://door.tscn" id="13_l8w4d"]
+[ext_resource type="PackedScene" uid="uid://xkbnh5kjhyvj" path="res://scene/door.tscn" id="13_l8w4d"]
 [ext_resource type="PackedScene" uid="uid://6okluevilh4r" path="res://scene/conrong.tscn" id="14_1qi2h"]
 
 [sub_resource type="Environment" id="Environment_7revu"]
